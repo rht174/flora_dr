@@ -36,6 +36,19 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         appBar: AppBar(
           title: const Text('floraDr'),
+          actions: [
+            IconButton(
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('this is info')));
+              },
+              icon: const Icon(
+                Icons.info_outline,
+              ),
+              tooltip: 'show info',
+              iconSize: 28,
+            )
+          ],
         ),
         body: Center(
           child: Column(
