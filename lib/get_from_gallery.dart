@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class Galley extends StatelessWidget {
   final VoidCallback selectGallery;
+
   const Galley(this.selectGallery, {super.key});
 
   @override
@@ -10,6 +11,9 @@ class Galley extends StatelessWidget {
       width: 280,
       child: ElevatedButton(
         onPressed: selectGallery,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.cyan,
+        ),
         child: Row(
           children: const [
             Icon(Icons.image),
