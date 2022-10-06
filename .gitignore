@@ -65,3 +65,18 @@ fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
 fastlane/readme.md
+
+#all other folders except lib
+.dart_tool
+.idea
+android
+ios
+linux
+macos
+test
+web
+windows
+.flutter-plugins
+.flutter-plugins-dependencies
+analysis_options.yaml
+flora_dr.iml
