@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
 class Galley extends StatelessWidget {
-  const Galley({Key? key}) : super(key: key);
+  final VoidCallback selectGallery;
+  const Galley(this.selectGallery, {super.key});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: 280,
       child: ElevatedButton(
-        onPressed: null,
+        onPressed: selectGallery,
         child: Row(
           children: const [
             Icon(Icons.image),
