@@ -79,4 +79,8 @@ windows
 .flutter-plugins
 .flutter-plugins-dependencies
 analysis_options.yaml
+<<<<<<< Updated upstream
 flora_dr.iml
+=======
+flora_dr.iml
+>>>>>>> Stashed changes
