@@ -76,6 +76,7 @@ macos
 test
 web
 windows
+model/data/
 .flutter-plugins
 .flutter-plugins-dependencies
 analysis_options.yaml
