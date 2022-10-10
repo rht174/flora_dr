@@ -69,23 +69,27 @@ class _MyAppState extends State<MyApp> {
               opacity: 80.0,
             ),
           ),
-          child: const Center(
-            child: (RadioList()
-
-                // const SizedBox(
-                //   height: 40,
-                // ),
-                // _image != null
-                //     ? Image.file(
-                //         _image!,
-                //         height: 500,
-                //         width: 500,
-                //         fit: BoxFit.cover,
-                //       )
-                //     : Galley(() => pickImage(ImageSource.gallery)),
-                // Camera(() => pickImage(ImageSource.camera)),
-
+          child: Column(
+            children: const <Widget>[
+              Center(
+                child: Text(
+                  'select any one',
                 ),
+              ),
+              RadioList(),
+            ],
+            // const SizedBox(
+            //   height: 40,
+            // ),
+            // _image != null
+            //     ? Image.file(
+            //         _image!,
+            //         height: 500,
+            //         width: 500,
+            //         fit: BoxFit.cover,
+            //       )
+            //     : Galley(() => pickImage(ImageSource.gallery)),
+            // Camera(() => pickImage(ImageSource.camera)),
           ),
         ),
       ),
