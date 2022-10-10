@@ -4,6 +4,7 @@ import 'package:image_picker/image_picker.dart';
 
 import './get_from_camera.dart';
 import './get_from_gallery.dart';
+import './radio_list.dart';
 
 void main() => runApp(const MyApp());
 
@@ -60,35 +61,31 @@ class _MyAppState extends State<MyApp> {
         body: Container(
           constraints: const BoxConstraints.expand(),
           decoration: const BoxDecoration(
-              image: DecorationImage(
-            image: AssetImage(
-              'assets/images/app_bg.jpg',
+            image: DecorationImage(
+              image: AssetImage(
+                'assets/images/app_bg.jpg',
+              ),
+              fit: BoxFit.cover,
+              opacity: 80.0,
             ),
-            fit: BoxFit.cover,
-          )),
-          child: Center(
-            child: Column(
-              children: <Widget>[
-                const SizedBox(
-                  height: 40,
+          ),
+          child: const Center(
+            child: (RadioList()
+
+                // const SizedBox(
+                //   height: 40,
+                // ),
+                // _image != null
+                //     ? Image.file(
+                //         _image!,
+                //         height: 500,
+                //         width: 500,
+                //         fit: BoxFit.cover,
+                //       )
+                //     : Galley(() => pickImage(ImageSource.gallery)),
+                // Camera(() => pickImage(ImageSource.camera)),
+
                 ),
-                _image != null
-                    ? Image.file(
-                        _image!,
-                        height: 500,
-                        width: 500,
-                        fit: BoxFit.cover,
-                      )
-                    : const SizedBox(
-                        height: 300,
-                      ),
-                const SizedBox(
-                  height: 40,
-                ),
-                Galley(() => pickImage(ImageSource.gallery)),
-                Camera(() => pickImage(ImageSource.camera)),
-              ],
-            ),
           ),
         ),
       ),
