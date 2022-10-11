@@ -70,26 +70,33 @@ class _MyAppState extends State<MyApp> {
             ),
           ),
           child: Column(
-            children: const <Widget>[
-              Center(
+            children: <Widget>[
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+              ),
+              const Center(
                 child: Text(
-                  'select any one',
+                  'Select a plant to check it\'s health !',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
-              RadioList(),
+              const Padding(padding: EdgeInsets.all(3.0)),
+              const RadioList(),
+              const Padding(padding: EdgeInsets.all(7.0)),
+              // _image != null
+                  // ? Image.file(
+                  //     _image!,
+                  //     height: 500,
+                  //     width: 500,
+                  //     fit: BoxFit.cover,
+                  //   )
+                  // :
+              Galley(() => pickImage(ImageSource.gallery)),
+              Camera(() => pickImage(ImageSource.camera)),
             ],
-            // const SizedBox(
-            //   height: 40,
-            // ),
-            // _image != null
-            //     ? Image.file(
-            //         _image!,
-            //         height: 500,
-            //         width: 500,
-            //         fit: BoxFit.cover,
-            //       )
-            //     : Galley(() => pickImage(ImageSource.gallery)),
-            // Camera(() => pickImage(ImageSource.camera)),
           ),
         ),
       ),

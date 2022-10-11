@@ -12,7 +12,7 @@ class Galley extends StatelessWidget {
       child: ElevatedButton(
         onPressed: selectGallery,
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.cyan,
+          backgroundColor: Colors.cyan[800],
         ),
         child: Row(
           children: const [
