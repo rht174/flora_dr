@@ -35,7 +35,7 @@ class _RadioListState extends State<RadioList> {
     'Strawberry',
     'Tea',
     'Tomato',
-    'Others, (Experimental !)'
+    'Others, (Experimental!)'
   ];
   SingingCharacter _character = SingingCharacter.b1;
 
