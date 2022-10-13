@@ -76,11 +76,17 @@ macos
 test
 web
 windows
+#dataspell folders
 model/data/
 venv
+bin
+lib/python3.10
+share
+etc
 .flutter-plugins
 .flutter-plugins-dependencies
 analysis_options.yaml
 flora_dr.iml
+pyvenv.cfg
 
 >>>>>>> Stashed changes
