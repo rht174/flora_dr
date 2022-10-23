@@ -10,7 +10,6 @@ enum SingingCharacter {
   b7,
   b8,
   b9,
-  b10
 }
 
 class RadioList extends StatefulWidget {
@@ -35,7 +34,6 @@ class _RadioListState extends State<RadioList> {
     'Strawberry',
     'Tea',
     'Tomato',
-    'Others, (Experimental!)'
   ];
   SingingCharacter _character = SingingCharacter.b1;
 
@@ -145,18 +143,6 @@ class _RadioListState extends State<RadioList> {
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
             value: SingingCharacter.b9,
-            groupValue: _character,
-            onChanged: (SingingCharacter? value) {
-              setState(() {
-                _character = value!;
-              });
-            }),
-        RadioListTile(
-            title: Text(
-              plantList[9],
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-            ),
-            value: SingingCharacter.b10,
             groupValue: _character,
             onChanged: (SingingCharacter? value) {
               setState(() {

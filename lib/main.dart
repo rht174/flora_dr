@@ -83,17 +83,17 @@ class _MyAppState extends State<MyApp> {
                   ),
                 ),
               ),
-              const Padding(padding: EdgeInsets.all(3.0)),
+              const Padding(padding: EdgeInsets.all(5.0)),
               const RadioList(),
-              const Padding(padding: EdgeInsets.all(7.0)),
+              const Padding(padding: EdgeInsets.all(20.0)),
               // _image != null
-                  // ? Image.file(
-                  //     _image!,
-                  //     height: 500,
-                  //     width: 500,
-                  //     fit: BoxFit.cover,
-                  //   )
-                  // :
+              // ? Image.file(
+              //     _image!,
+              //     height: 500,
+              //     width: 500,
+              //     fit: BoxFit.cover,
+              //   )
+              // :
               Galley(() => pickImage(ImageSource.gallery)),
               Camera(() => pickImage(ImageSource.camera)),
             ],
