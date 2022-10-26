@@ -41,6 +41,16 @@ class _RadioListState extends State<RadioList> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        const Center(
+          child: Text(
+            'Select a plant to check it\'s health !',
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        const Padding(padding: EdgeInsets.all(2.0)),
         RadioListTile(
             title: Text(
               plantList[0],

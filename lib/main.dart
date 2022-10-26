@@ -38,25 +38,6 @@ class _MyAppState extends State<MyApp> {
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: const Text('floraDr'),
-          actions: [
-            IconButton(
-              onPressed: () {
-                final snackbar = SnackBar(
-                  content: const Text('this is info'),
-                  action: SnackBarAction(
-                    label: 'ok',
-                    onPressed: () {},
-                  ),
-                );
-                ScaffoldMessenger.of(context).showSnackBar(snackbar);
-              },
-              icon: const Icon(
-                Icons.info_outline,
-              ),
-              tooltip: 'show info',
-              iconSize: 28,
-            )
-          ],
         ),
         body: Container(
           constraints: const BoxConstraints.expand(),
@@ -71,19 +52,7 @@ class _MyAppState extends State<MyApp> {
           ),
           child: Column(
             children: <Widget>[
-              const Padding(
-                padding: EdgeInsets.all(8.0),
-              ),
-              const Center(
-                child: Text(
-                  'Select a plant to check it\'s health !',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              const Padding(padding: EdgeInsets.all(5.0)),
+              const Padding(padding: EdgeInsets.all(8.0)),
               const RadioList(),
               const Padding(padding: EdgeInsets.all(20.0)),
               // _image != null
