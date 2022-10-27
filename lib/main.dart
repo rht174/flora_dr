@@ -1,10 +1,13 @@
 import 'dart:io';
+import 'package:flora_dr/predict.dart';
+import 'package:flora_dr/result.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 import './get_from_camera.dart';
 import './get_from_gallery.dart';
 import './radio_list.dart';
+import 'go_back.dart';
 
 void main() => runApp(const MyApp());
 
@@ -19,9 +22,9 @@ class _MyAppState extends State<MyApp> {
   File? _image;
 
   Future pickImage(ImageSource source) async {
-    final image = await ImagePicker().pickImage(source: source);
-    if (image == null) return;
-    final imageTemp = File(image.path);
+    final imagePicked = await ImagePicker().pickImage(source: source);
+    if (imagePicked == null) return;
+    final imageTemp = File(imagePicked.path);
     setState(() {
       _image = imageTemp;
     });
@@ -70,7 +73,17 @@ class _MyAppState extends State<MyApp> {
                             fit: BoxFit.cover,
                           ),
                         ),
-                      //  Add button here
+                        const Padding(padding: EdgeInsets.all(10.0)),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            GoBack(() => setState(() {
+                                  _image = null;
+                                })),
+                            const Predict(),
+                          ],
+                        ),
+                        const Result(), //  Add button here
                       ],
                     )
                   : Column(
