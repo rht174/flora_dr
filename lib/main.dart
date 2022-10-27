@@ -47,24 +47,41 @@ class _MyAppState extends State<MyApp> {
                 'assets/images/app_bg.jpg',
               ),
               fit: BoxFit.cover,
-              opacity: 80.0,
+              opacity: 950.0,
             ),
           ),
           child: Column(
             children: <Widget>[
-              const Padding(padding: EdgeInsets.all(8.0)),
-              const RadioList(),
-              const Padding(padding: EdgeInsets.all(20.0)),
-              // _image != null
-              // ? Image.file(
-              //     _image!,
-              //     height: 500,
-              //     width: 500,
-              //     fit: BoxFit.cover,
-              //   )
-              // :
-              Galley(() => pickImage(ImageSource.gallery)),
-              Camera(() => pickImage(ImageSource.camera)),
+              _image != null
+                  ? Column(
+                      children: [
+                        const Padding(padding: EdgeInsets.all(25.0)),
+                        Container(
+                          padding: const EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: const BorderRadius.all(Radius.zero),
+                            border: Border.all(color: Colors.black),
+                          ),
+                          child: Image.file(
+                            _image!,
+                            height: 300,
+                            width: 300,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      //  Add button here
+                      ],
+                    )
+                  : Column(
+                      children: [
+                        const Padding(padding: EdgeInsets.all(8.0)),
+                        const RadioList(),
+                        const Padding(padding: EdgeInsets.all(20.0)),
+                        Galley(() => pickImage(ImageSource.gallery)),
+                        Camera(() => pickImage(ImageSource.camera)),
+                      ],
+                    )
             ],
           ),
         ),
