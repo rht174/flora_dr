@@ -32,7 +32,7 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
-  Future<void> predict() async {
+  Future predict() async {
     setState(() {
       showSpinner = true;
     });
@@ -40,27 +40,26 @@ class _MyAppState extends State<MyApp> {
     var stream = http.ByteStream(_image!.openRead());
     stream.cast();
     var length = await _image!.length();
-    var uri = Uri.parse('http://10.0.2.2:8000/predict');
+    var uri = Uri.parse('http://10.0.2.2:5000/predict');
     var request = http.MultipartRequest('POST', uri);
     var multipart = http.MultipartFile(
       'image',
       stream,
-      length
+      length,
     );
     request.files.add(multipart);
     var response = await request.send();
-    if(response.statusCode == 200){
+    if (response.statusCode == 200) {
       setState(() {
         showSpinner = false;
       });
       print('done');
-    }else{
+    } else {
       setState(() {
         showSpinner = false;
       });
       print('not done');
     }
-
   }
 
   @override
