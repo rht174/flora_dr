@@ -3,6 +3,7 @@ import 'package:flora_dr/predict.dart';
 import 'package:flora_dr/result.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:http/http.dart' as http;
 
 import './get_from_camera.dart';
 import './get_from_gallery.dart';
@@ -20,6 +21,11 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   File? _image;
+
+  predict(){
+    final request = http.MultipartRequest('POST', Uri.parse('http://127.0.0.1:5000/predict'));
+    final header = {'Content-type': 'multipart/form-data'};
+  }
 
   Future pickImage(ImageSource source) async {
     final imagePicked = await ImagePicker().pickImage(source: source);
@@ -74,6 +80,7 @@ class _MyAppState extends State<MyApp> {
                           ),
                         ),
                         const Padding(padding: EdgeInsets.all(10.0)),
+
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [

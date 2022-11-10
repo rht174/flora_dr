@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 enum SingingCharacter {
-  b1,
-  b2,
-  b3,
-  b4,
-  b5,
-  b6,
-  b7,
-  b8,
-  b9,
+  apple,
+  cherry,
+  corn,
+  grape,
+  pepperBell,
+  potato,
+  strawberry,
+  tea,
+  tomato,
 }
 
 class RadioList extends StatefulWidget {
@@ -35,7 +35,7 @@ class _RadioListState extends State<RadioList> {
     'Tea',
     'Tomato',
   ];
-  SingingCharacter _character = SingingCharacter.b1;
+  SingingCharacter _character = SingingCharacter.apple;
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +56,7 @@ class _RadioListState extends State<RadioList> {
               plantList[0],
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
-            value: SingingCharacter.b1,
+            value: SingingCharacter.apple,
             groupValue: _character,
             onChanged: (SingingCharacter? value) {
               setState(() {
@@ -68,7 +68,7 @@ class _RadioListState extends State<RadioList> {
               plantList[1],
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
-            value: SingingCharacter.b2,
+            value: SingingCharacter.cherry,
             groupValue: _character,
             onChanged: (SingingCharacter? value) {
               setState(() {
@@ -80,7 +80,7 @@ class _RadioListState extends State<RadioList> {
               plantList[2],
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
-            value: SingingCharacter.b3,
+            value: SingingCharacter.corn,
             groupValue: _character,
             onChanged: (SingingCharacter? value) {
               setState(() {
@@ -92,7 +92,7 @@ class _RadioListState extends State<RadioList> {
               plantList[3],
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
-            value: SingingCharacter.b4,
+            value: SingingCharacter.grape,
             groupValue: _character,
             onChanged: (SingingCharacter? value) {
               setState(() {
@@ -104,7 +104,7 @@ class _RadioListState extends State<RadioList> {
               plantList[4],
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
-            value: SingingCharacter.b5,
+            value: SingingCharacter.pepperBell,
             groupValue: _character,
             onChanged: (SingingCharacter? value) {
               setState(() {
@@ -116,7 +116,7 @@ class _RadioListState extends State<RadioList> {
               plantList[5],
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
-            value: SingingCharacter.b6,
+            value: SingingCharacter.potato,
             groupValue: _character,
             onChanged: (SingingCharacter? value) {
               setState(() {
@@ -128,7 +128,7 @@ class _RadioListState extends State<RadioList> {
               plantList[6],
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
-            value: SingingCharacter.b7,
+            value: SingingCharacter.strawberry,
             groupValue: _character,
             onChanged: (SingingCharacter? value) {
               setState(() {
@@ -140,7 +140,7 @@ class _RadioListState extends State<RadioList> {
               plantList[7],
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
-            value: SingingCharacter.b8,
+            value: SingingCharacter.tea,
             groupValue: _character,
             onChanged: (SingingCharacter? value) {
               setState(() {
@@ -152,7 +152,7 @@ class _RadioListState extends State<RadioList> {
               plantList[8],
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
-            value: SingingCharacter.b9,
+            value: SingingCharacter.tomato,
             groupValue: _character,
             onChanged: (SingingCharacter? value) {
               setState(() {
