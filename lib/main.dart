@@ -21,11 +21,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   File? _image;
-
-  predict(){
-    final request = http.MultipartRequest('POST', Uri.parse('http://127.0.0.1:5000/predict'));
-    final header = {'Content-type': 'multipart/form-data'};
-  }
+  bool showSpinner = false;
 
   Future pickImage(ImageSource source) async {
     final imagePicked = await ImagePicker().pickImage(source: source);
@@ -34,6 +30,37 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       _image = imageTemp;
     });
+  }
+
+  Future<void> predict() async {
+    setState(() {
+      showSpinner = true;
+    });
+
+    var stream = http.ByteStream(_image!.openRead());
+    stream.cast();
+    var length = await _image!.length();
+    var uri = Uri.parse('http://10.0.2.2:8000/predict');
+    var request = http.MultipartRequest('POST', uri);
+    var multipart = http.MultipartFile(
+      'image',
+      stream,
+      length
+    );
+    request.files.add(multipart);
+    var response = await request.send();
+    if(response.statusCode == 200){
+      setState(() {
+        showSpinner = false;
+      });
+      print('done');
+    }else{
+      setState(() {
+        showSpinner = false;
+      });
+      print('not done');
+    }
+
   }
 
   @override
@@ -87,10 +114,10 @@ class _MyAppState extends State<MyApp> {
                             GoBack(() => setState(() {
                                   _image = null;
                                 })),
-                            const Predict(),
+                            Predict(predict),
                           ],
                         ),
-                        const Result(), //  Add button here
+                        Result(showSpinner), //  Add button here
                       ],
                     )
                   : Column(
