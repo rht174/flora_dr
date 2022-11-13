@@ -11,10 +11,6 @@ enum SingingCharacter {
 class RadioList extends StatefulWidget {
   const RadioList({super.key});
 
-  // final String title;
-  // final SingingCharacter x;
-  // const RadioList(this.title, this.x, {super.key});
-
   @override
   State<RadioList> createState() => _RadioListState();
 }
@@ -55,7 +51,6 @@ class _RadioListState extends State<RadioList> {
                 _character = value!;
               });
             }),
-
         RadioListTile(
             title: Text(
               plantList[1],
@@ -80,7 +75,6 @@ class _RadioListState extends State<RadioList> {
                 _character = value!;
               });
             }),
-
         RadioListTile(
             title: Text(
               plantList[3],
