@@ -2,12 +2,8 @@ import 'package:flutter/material.dart';
 
 enum SingingCharacter {
   apple,
-  cherry,
   corn,
   grape,
-  pepperBell,
-  potato,
-  strawberry,
   tea,
   tomato,
 }
@@ -26,12 +22,8 @@ class RadioList extends StatefulWidget {
 class _RadioListState extends State<RadioList> {
   var plantList = [
     'Apple',
-    'Cherry',
     'Corn',
     'Grape',
-    'Pepper Bell',
-    'Potato',
-    'Strawberry',
     'Tea',
     'Tomato',
   ];
@@ -50,7 +42,7 @@ class _RadioListState extends State<RadioList> {
             ),
           ),
         ),
-        const Padding(padding: EdgeInsets.all(2.0)),
+        const Padding(padding: EdgeInsets.all(15.0)),
         RadioListTile(
             title: Text(
               plantList[0],
@@ -63,21 +55,10 @@ class _RadioListState extends State<RadioList> {
                 _character = value!;
               });
             }),
+
         RadioListTile(
             title: Text(
               plantList[1],
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-            ),
-            value: SingingCharacter.cherry,
-            groupValue: _character,
-            onChanged: (SingingCharacter? value) {
-              setState(() {
-                _character = value!;
-              });
-            }),
-        RadioListTile(
-            title: Text(
-              plantList[2],
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
             value: SingingCharacter.corn,
@@ -89,7 +70,7 @@ class _RadioListState extends State<RadioList> {
             }),
         RadioListTile(
             title: Text(
-              plantList[3],
+              plantList[2],
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
             value: SingingCharacter.grape,
@@ -99,45 +80,10 @@ class _RadioListState extends State<RadioList> {
                 _character = value!;
               });
             }),
+
         RadioListTile(
             title: Text(
-              plantList[4],
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-            ),
-            value: SingingCharacter.pepperBell,
-            groupValue: _character,
-            onChanged: (SingingCharacter? value) {
-              setState(() {
-                _character = value!;
-              });
-            }),
-        RadioListTile(
-            title: Text(
-              plantList[5],
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-            ),
-            value: SingingCharacter.potato,
-            groupValue: _character,
-            onChanged: (SingingCharacter? value) {
-              setState(() {
-                _character = value!;
-              });
-            }),
-        RadioListTile(
-            title: Text(
-              plantList[6],
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-            ),
-            value: SingingCharacter.strawberry,
-            groupValue: _character,
-            onChanged: (SingingCharacter? value) {
-              setState(() {
-                _character = value!;
-              });
-            }),
-        RadioListTile(
-            title: Text(
-              plantList[7],
+              plantList[3],
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
             value: SingingCharacter.tea,
@@ -149,7 +95,7 @@ class _RadioListState extends State<RadioList> {
             }),
         RadioListTile(
             title: Text(
-              plantList[8],
+              plantList[4],
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
             value: SingingCharacter.tomato,
