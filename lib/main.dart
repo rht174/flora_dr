@@ -46,6 +46,7 @@ class _MyAppState extends State<MyApp> {
       'image',
       stream,
       length,
+      filename: _image!.path.split('/').last,
     );
     request.files.add(multipart);
     var response = await request.send();
