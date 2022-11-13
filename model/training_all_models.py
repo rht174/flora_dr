@@ -8,7 +8,8 @@ from keras.models import Model
 from keras.preprocessing.image import ImageDataGenerator
 from glob import glob
 
-dir_name_list = ['apple', 'corn', 'grape', 'tea', 'tomato']
+# dir_name_list = ['apple', 'corn', 'grape', 'tea', 'tomato']
+dir_name_list = ['tea', 'tomato']
 image_size = [224, 224, 3]
 model_score = {
     'apple': None, 'corn': None, 'grape': None, 'tea': None, 'tomato': None
@@ -102,7 +103,7 @@ for folder in dir_name_list:
     history = model.fit(
         training_set,
         validation_data=test_set,
-        epochs=25,
+        epochs=10,
         steps_per_epoch=len(training_set),
         validation_steps=len(test_set),
         callbacks=[callback],
