@@ -24,9 +24,9 @@ class _ResultState extends State<Result> {
       child: Column(
         children: [
           const Padding(padding: EdgeInsets.all(10.0)),
-          Text(widget.plant),
-          Text(widget.health),
-          Text(widget.confidence),
+          Text('Plant: ${widget.plant}'),
+          Text('Condition: ${widget.health}'),
+          Text('Confidence: ${widget.confidence}%'),
         ],
       ),
     );

@@ -35,22 +35,6 @@ for folder in dir_name_list:
     valid_path = f'data/{folder}/val'
     folders = glob(f'data/{folder}/train/*')
     print(folders)
-    # # our layers - you can add more if you want
-    # x = Flatten()(keras_transfer.output)
-    # prediction = Dense(len(folders), activation='softmax')(x)
-    # # create a model object
-    #
-    # model = Model(inputs=keras_transfer.input, outputs=prediction)
-    #
-    # # view the structure of the model
-    # model.summary()
-    #
-    # # tell the model what cost and optimization method to use
-    # model.compile(
-    #     loss='categorical_crossentropy',
-    #     optimizer='adam',
-    #     metrics=['accuracy']
-    # )
 
     train_datagen = ImageDataGenerator(rescale=1. / 224,
                                        shear_range=0.2,
