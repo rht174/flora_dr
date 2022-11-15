@@ -15,20 +15,6 @@ model_score = {
     'apple': None, 'corn': None, 'grape': None, 'tea': None, 'tomato': None
 }
 
-'''
-# add preprocessing layer to the front of ResNet
-keras_transfer = tf.keras.applications.MobileNetV2(
-    include_top=False,
-    weights="imagenet",
-    input_shape=image_size,
-    classifier_activation="softmax"
-)
-
-# don't train existing weights
-for layer in keras_transfer.layers:
-    layer.trainable = False
-'''
-
 # main for loop
 for folder in dir_name_list:
     train_path = f'data/{folder}/train'
