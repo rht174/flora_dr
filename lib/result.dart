@@ -40,7 +40,7 @@ class _ResultState extends State<Result> {
                 color: Colors.white70),
           ),
           const Padding(padding: EdgeInsets.all(5.0)),
-          Text('Confidence: ${widget.confidence}%',
+          Text('Accuracy: ${widget.confidence}%',
               style: const TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
