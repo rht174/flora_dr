@@ -1,5 +1,3 @@
-import 'package:flora_dr/go_back.dart';
-import 'package:flora_dr/predict.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
@@ -23,10 +21,28 @@ class _ResultState extends State<Result> {
       inAsyncCall: widget.showSpinner,
       child: Column(
         children: [
-          const Padding(padding: EdgeInsets.all(10.0)),
-          Text(widget.plant),
-          Text(widget.health),
-          Text(widget.confidence),
+          const Padding(padding: EdgeInsets.all(20.0)),
+          Text(
+            'Plant: ${widget.plant}',
+            style: const TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                color: Colors.white70),
+          ),
+          const Padding(padding: EdgeInsets.all(5.0)),
+          Text(
+            'Condition: ${widget.health}',
+            style: const TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                color: Colors.white70),
+          ),
+          const Padding(padding: EdgeInsets.all(5.0)),
+          Text('Accuracy: ${widget.confidence}%',
+              style: const TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white70)),
         ],
       ),
     );
