@@ -2,9 +2,11 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:flora_dr/predict.dart';
 import 'package:flora_dr/result.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:http/http.dart' as http;
+import 'package:url_launcher/url_launcher.dart';
 
 import './get_from_camera.dart';
 import './get_from_gallery.dart';
@@ -149,6 +151,19 @@ class _MyAppState extends State<MyApp> {
                         ),
                         Result(showSpinner, plant, health, confidence),
                         //  Add button here
+                        const SizedBox(height: 20,),
+                        Container(
+                          child: Column(
+                            children: const [
+                              Text(
+                                  'Note - This app will only work with local server.'),
+                              Text('The backend is not hosted.'),
+                              Text('Check GitHub repo.'),
+                              Text('github.com/rht174/flora_dr'),
+                              Text('github.com/rht174/flora_dr_api'),
+                            ],
+                          ),
+                        ),
                       ],
                     )
                   : Column(
@@ -250,10 +265,12 @@ class _MyAppState extends State<MyApp> {
                               Text(
                                   'Note - This app will only work with local server.'),
                               Text('The backend is not hosted.'),
-                              Text('Follow below link to GitHub repo.')
+                              Text('Check GitHub repo.'),
+                              Text('github.com/rht174/flora_dr'),
+                              Text('github.com/rht174/flora_dr_api'),
                             ],
                           ),
-                        )
+                        ),
                       ],
                     )
             ],
