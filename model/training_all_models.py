@@ -15,42 +15,12 @@ model_score = {
     'apple': None, 'corn': None, 'grape': None, 'tea': None, 'tomato': None
 }
 
-'''
-# add preprocessing layer to the front of ResNet
-keras_transfer = tf.keras.applications.MobileNetV2(
-    include_top=False,
-    weights="imagenet",
-    input_shape=image_size,
-    classifier_activation="softmax"
-)
-
-# don't train existing weights
-for layer in keras_transfer.layers:
-    layer.trainable = False
-'''
-
 # main for loop
 for folder in dir_name_list:
     train_path = f'data/{folder}/train'
     valid_path = f'data/{folder}/val'
     folders = glob(f'data/{folder}/train/*')
     print(folders)
-    # # our layers - you can add more if you want
-    # x = Flatten()(keras_transfer.output)
-    # prediction = Dense(len(folders), activation='softmax')(x)
-    # # create a model object
-    #
-    # model = Model(inputs=keras_transfer.input, outputs=prediction)
-    #
-    # # view the structure of the model
-    # model.summary()
-    #
-    # # tell the model what cost and optimization method to use
-    # model.compile(
-    #     loss='categorical_crossentropy',
-    #     optimizer='adam',
-    #     metrics=['accuracy']
-    # )
 
     train_datagen = ImageDataGenerator(rescale=1. / 224,
                                        shear_range=0.2,

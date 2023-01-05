@@ -160,7 +160,7 @@ class _MyAppState extends State<MyApp> {
                               child: Text(
                                 'Select a plant to check it\'s health !',
                                 style: TextStyle(
-                                  fontSize: 24,
+                                  fontSize: 25,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -171,7 +171,7 @@ class _MyAppState extends State<MyApp> {
                                   plantList[0],
                                   style: const TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 20),
+                                      fontSize: 30),
                                 ),
                                 value: SingingCharacter.apple,
                                 groupValue: _character,
@@ -185,7 +185,7 @@ class _MyAppState extends State<MyApp> {
                                   plantList[1],
                                   style: const TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 20),
+                                      fontSize: 30),
                                 ),
                                 value: SingingCharacter.corn,
                                 groupValue: _character,
@@ -199,7 +199,7 @@ class _MyAppState extends State<MyApp> {
                                   plantList[2],
                                   style: const TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 20),
+                                      fontSize: 30),
                                 ),
                                 value: SingingCharacter.grape,
                                 groupValue: _character,
@@ -213,7 +213,7 @@ class _MyAppState extends State<MyApp> {
                                   plantList[3],
                                   style: const TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 20),
+                                      fontSize: 30),
                                 ),
                                 value: SingingCharacter.tea,
                                 groupValue: _character,
@@ -227,7 +227,7 @@ class _MyAppState extends State<MyApp> {
                                   plantList[4],
                                   style: const TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 20),
+                                      fontSize: 30),
                                 ),
                                 value: SingingCharacter.tomato,
                                 groupValue: _character,
